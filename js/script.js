@@ -97,14 +97,18 @@ window.addEventListener('DOMContentLoaded', () => {
           modalCloseBtn = document.querySelector('[data-close]');
     
     modalTrigger.forEach(btn => {
-        btn.addEventListener('click', () => {
-            modal.classList.add('show');
-            modal.classList.remove('hide');
-            document.body.style.overflow = 'hidden';  /* не прокручивает страницу при открытом модальном окне  */   
-  
+        btn.addEventListener('click', () => {  
+        openModal();
         modalCloseBtn.addEventListener('click', (CloseModal));
         });
     });
+
+    function openModal() {
+        modal.classList.add('show');
+        modal.classList.remove('hide');
+        document.body.style.overflow = 'hidden';   /* не прокручивает страницу при открытом модальном окне  */ 
+        // clearInterval(modalTimerId);
+    }
         // Функция модального окна если мы кликаем по любой другой области
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
@@ -123,8 +127,17 @@ window.addEventListener('DOMContentLoaded', () => {
             CloseModal();
         }
     });
+    // Вызов модального окна после определенного времени
+    // const modalTimerId = setTimeout(openModal, 1000);
 
 
+    // показ меню при прокрутке вниз до конца
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
+            openModal(); 
+        }
+    });
+    
 
           
 });
