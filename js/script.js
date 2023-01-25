@@ -37,7 +37,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Timer 
 
-    const deadline = '2023-01-25';
+    const deadline = '2023-02-1';
 
     function getTimeRemaining(endtime) {
         const t = Date.parse(endtime) - Date.parse(new Date()),
@@ -132,12 +132,46 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     // показ меню при прокрутке вниз до конца
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
-            openModal(); 
-        }
-    });
+    // window.addEventListener('scroll', () => {
+    //     if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
+    //         openModal(); 
+    //     }
+    // });
     
+
+    // // Используем классы для карточек menu__item 
+    // class MenuCard {
+    //     constructor(src, alt, tittle, descr, price, parentSelector) {
+    //          this.src = src;
+    //          this.alt = alt;
+    //          this.tittle = tittle;
+    //          this.descr = descr;
+    //          this.price = price;
+    //          this.parent = document.querySelector(parentSelector);
+    //          this.transfer = 27;
+    //          this.changeToUAH();
+    //     }
+    //     // конвертация цены в другую валюту
+    //     changeToUAH() {
+    //         this.price = this.price * this.transfer;
+    //     }
+
+    //     render() {
+    //         const element = document.createElement('div');
+    //         element.innerHTML = `<div class="menu__item">
+    //         <img src=${this.src} alt=${this.alt}>
+    //         <h3 class="menu__item-subtitle">${this.tittle}"</h3>
+    //         <div class="menu__item-descr">${this.descr} - это новый подход к приготовлению блюд: больше свежих овощей и фруктов. Продукт активных и здоровых людей. Это абсолютно новый продукт с оптимальной ценой и высоким качеством!</div>
+    //         <div class="menu__item-divider"></div>
+    //         <div class="menu__item-price">
+    //             <div class="menu__item-cost">Цена:</div>
+    //             <div class="menu__item-total"><span>${this.price}</span> грн/день</div>
+    //         </div>
+    //     </div>`;
+        
+    // }
+
+    // }
 
           
 });
