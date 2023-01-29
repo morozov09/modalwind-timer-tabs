@@ -6,3 +6,11 @@
 .hide {
     display: none;
 }
+.offer__slider-inner {
+    display: flex;
+    width: 400%;
+    transition: 0.5s all;
+}
+.offer__slider-wrapper {
+    overflow: hidden;
+}
